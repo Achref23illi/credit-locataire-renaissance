@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -13,6 +12,8 @@ import CreditRequest from "./pages/CreditRequest";
 import JudiciairesRequest from "./pages/JudiciairesRequest";
 import RegieRequest from "./pages/RegieRequest";
 import NotFound from "./pages/NotFound";
+import ConsentForm from "./pages/ConsentForm";
+import PaymentForm from "./pages/PaymentForm";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,8 @@ const App = () => (
           <Route path="/demande/credit" element={<CreditRequest />} />
           <Route path="/demande/judiciaires" element={<JudiciairesRequest />} />
           <Route path="/demande/regie" element={<RegieRequest />} />
+          <Route path="/consent-form" element={<ConsentForm />} />
+          <Route path="/payment-form" element={<PaymentForm />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -81,9 +80,11 @@ const CreditRequest = () => {
                 <FileText className="h-5 w-5" /> Formulaire de consentement électronique
               </h3>
               <p className="mb-6">Le locataire le remplit en ligne, nous le recevons directement.</p>
-              <Button variant="outline" className="text-navy bg-white hover:bg-gray-100 hover:text-navy-dark w-full">
-                Remplir en ligne
-              </Button>
+              <Link to="/consent-form">
+                <Button variant="outline" className="text-navy bg-white hover:bg-gray-100 hover:text-navy-dark w-full">
+                  Remplir en ligne
+                </Button>
+              </Link>
             </div>
             
             <div className="bg-navy text-white p-6 rounded-lg">
@@ -101,9 +102,11 @@ const CreditRequest = () => {
                 <CreditCard className="h-5 w-5" /> Formulaire de paiement sécurisé
               </h3>
               <p className="mb-6">Accessible en ligne pour toutes les demandes de vérification, avec un paiement simple et sécurisé.</p>
-              <Button variant="outline" className="text-gray-700 bg-white hover:bg-gray-100 hover:text-gray-800 w-full">
-                Payer maintenant
-              </Button>
+              <Link to="/payment-form">
+                <Button variant="outline" className="text-gray-700 bg-white hover:bg-gray-100 hover:text-gray-800 w-full">
+                  Payer maintenant
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

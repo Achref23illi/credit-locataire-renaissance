@@ -1,0 +1,38 @@
+/* ...existing code... */
+
+.payment-button {
+  /* ...existing code... */
+  position: relative !important;
+  z-index: 999 !important; /* Use a very high z-index */
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  background-color: #007bff !important; /* Force blue background */
+  color: white !important; /* Force white text */
+  opacity: 1 !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  font-weight: bold !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.payment-button:hover {
+  background-color: #0056b3 !important;
+}
+
+.payment-button:active {
+  background-color: #004085 !important;
+}
+
+.payment-form-container {
+  /* ...existing code... */
+  overflow: visible;
+  position: relative;
+}
+
+/* Override any styles that might be disabling the button */
+button[disabled], 
+button:disabled {
+  cursor: pointer !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}

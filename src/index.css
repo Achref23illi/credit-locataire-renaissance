@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -75,6 +74,29 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Global styles to ensure buttons are clickable */
+button {
+  cursor: pointer !important;
+}
+
+/* Fix any global overlays that might be blocking clicks */
+.overlay, .modal-backdrop, .modal-container {
+  pointer-events: none !important;
+}
+
+/* Ensure payment form is above any overlays */
+.payment-form-container {
+  position: relative;
+  z-index: 9999 !important;
+}
+
+/* Direct fix for payment button */
+.payment-button {
+  position: relative !important;
+  z-index: 10000 !important;
+  pointer-events: auto !important;
 }
 
 @layer components {
