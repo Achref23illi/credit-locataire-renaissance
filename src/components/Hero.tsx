@@ -11,14 +11,13 @@ const Hero = () => {
       <div className="relative container-custom py-20 md:py-32">
         <div className="max-w-2xl">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            ENQUÊTE DE CRÉDIT EN LIGNE
+            ENQUÊTE DE CRÉDIT EN LIGNE DU LOCATAIRE
           </h1>
           <p className="text-lg md:text-xl text-white mb-8">
-            Vérifiez la solvabilité de vos futurs locataires, employés ou partenaires
-            d'affaires avec notre service d'enquête de crédit professionnel.
+            Voulez-vous connaître les habitudes de paiement du futur locataire et la liste complète de ses créanciers?
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/demande" className="btn-primary text-center">
+            <Link to="/demande/credit" className="btn-primary text-center">
               Demander une enquête
             </Link>
             <Link to="/services" className="btn-secondary text-center">

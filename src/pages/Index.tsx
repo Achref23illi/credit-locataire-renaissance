@@ -9,14 +9,14 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div>
+    <>
       <Header />
       <Hero />
       <Services />
       <ServiceCards />
       <CTA />
       <Footer />
-    </div>
+    </>
   );
 };
 

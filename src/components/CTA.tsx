@@ -13,7 +13,7 @@ const CTA = () => {
           Obtenez rapidement des informations fiables pour prendre des décisions éclairées.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Link to="/demande" className="btn-primary">
+          <Link to="/demande/credit" className="btn-primary">
             Demander une enquête maintenant
           </Link>
           <Link to="/contact" className="border border-white text-white hover:bg-white hover:text-navy font-medium py-3 px-6 rounded-md transition-colors duration-200">
