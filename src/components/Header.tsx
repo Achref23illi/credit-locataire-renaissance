@@ -1,7 +1,16 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Phone, Facebook, Instagram } from 'lucide-react';
+import { Menu, X, Phone, Facebook, Instagram, ChevronDown } from 'lucide-react';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -38,7 +47,52 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-gray-800 hover:text-orange font-medium">Accueil</Link>
             <Link to="/a-propos" className="text-gray-800 hover:text-orange font-medium">À propos</Link>
-            <Link to="/services" className="text-gray-800 hover:text-orange font-medium">Vérifications</Link>
+            
+            {/* Vérifications Dropdown */}
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-gray-800 hover:text-orange font-medium bg-transparent hover:bg-transparent">
+                    <span>Vérifications</span>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-white">
+                    <ul className="grid w-[200px] gap-1 p-2">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            to="/demande/credit"
+                            className="block py-2 px-3 hover:bg-gray-100 rounded-md"
+                          >
+                            Enquête de crédit en ligne
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            to="/demande/judiciaires"
+                            className="block py-2 px-3 hover:bg-gray-100 rounded-md"
+                          >
+                            Antécédents judiciaires au Québec
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            to="/demande/regie"
+                            className="block py-2 px-3 hover:bg-gray-100 rounded-md"
+                          >
+                            Vérification à la régie du logement
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+            
             <Link to="/contact" className="text-gray-800 hover:text-orange font-medium">Nous rejoindre</Link>
           </nav>
 
@@ -74,13 +128,38 @@ const Header = () => {
               >
                 À propos
               </Link>
-              <Link 
-                to="/services" 
-                className="text-gray-800 hover:text-orange font-medium py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Vérifications
-              </Link>
+              
+              {/* Mobile Vérifications Dropdown */}
+              <div className="py-2">
+                <div className="flex items-center justify-between text-gray-800 font-medium">
+                  <span>Vérifications</span>
+                  <ChevronDown className="h-4 w-4" />
+                </div>
+                <div className="pl-4 mt-2 flex flex-col space-y-2">
+                  <Link 
+                    to="/demande/credit" 
+                    className="text-gray-700 hover:text-orange py-1"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Enquête de crédit en ligne
+                  </Link>
+                  <Link 
+                    to="/demande/judiciaires" 
+                    className="text-gray-700 hover:text-orange py-1"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Antécédents judiciaires au Québec
+                  </Link>
+                  <Link 
+                    to="/demande/regie" 
+                    className="text-gray-700 hover:text-orange py-1"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Vérification à la régie du logement
+                  </Link>
+                </div>
+              </div>
+              
               <Link 
                 to="/contact" 
                 className="text-gray-800 hover:text-orange font-medium py-2"
