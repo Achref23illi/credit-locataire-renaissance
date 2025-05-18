@@ -76,12 +76,12 @@ const CreditRequest = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-orange-500 text-white p-6 rounded-lg">
+            <div className="bg-navy text-white p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                 <FileText className="h-5 w-5" /> Formulaire de consentement électronique
               </h3>
               <p className="mb-6">Le locataire le remplit en ligne, nous le recevons directement.</p>
-              <Button variant="outline" className="text-orange-500 bg-white hover:bg-gray-100 hover:text-orange-600 w-full">
+              <Button variant="outline" className="text-navy bg-white hover:bg-gray-100 hover:text-navy-dark w-full">
                 Remplir en ligne
               </Button>
             </div>
