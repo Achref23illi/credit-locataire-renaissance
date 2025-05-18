@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom colors for the credit locataire website
+				'navy': '#101E3D',
+				'navy-dark': '#0A1429',
+				'orange': '#FF6B42',
+				'orange-light': '#FF8F6F',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
