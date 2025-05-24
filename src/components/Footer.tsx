@@ -42,11 +42,11 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <Phone className="h-5 w-5 mr-3 mt-0.5 text-orange" />
-                <span>+1 (514) 555-7777</span>
+                <span>+1 (514) 545-2839</span>
               </li>
               <li className="flex items-start">
                 <Mail className="h-5 w-5 mr-3 mt-0.5 text-orange" />
-                <span>info@enquetedecredit.com</span>
+                <span>info@creditlocataire.ca</span>
               </li>
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 mr-3 mt-0.5 text-orange" />
