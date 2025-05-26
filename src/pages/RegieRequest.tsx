@@ -29,6 +29,12 @@ const RegieRequest = () => {
             <div className="bg-white p-8 rounded-lg shadow-md">
               <h2 className="text-2xl font-bold mb-6">DÉLAI : Habituellement dans la même journée ou le lendemain de jours ouvrables.</h2>
               
+              <div className="bg-orange/10 p-4 rounded-lg mb-6">
+                <p className="text-orange font-semibold text-center">
+                  ✓ Enquêtes disponibles 7j/7
+                </p>
+              </div>
+              
               <div className="mt-4 space-y-4 text-gray-700">
                 <p>
                   Enquetedecreditenligne.com n'est pas responsable de tout frais encourus
@@ -59,26 +65,57 @@ const RegieRequest = () => {
                 <span className="mr-2">—</span> Tarifs
               </h2>
               
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-xl font-medium mb-2">
-                    Enquête de crédit en ligne + Antécédents judiciaires au Québec :
-                  </h3>
-                  <p className="text-2xl font-bold">38.00$ + tx</p>
+              {/* Plan sans frais fixes */}
+              <div className="mb-6 pb-4 border-b border-white/20">
+                <h3 className="text-lg font-bold mb-3">Plan sans frais fixes</h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-base font-medium mb-1">
+                      Crédit + Antécédents judiciaires :
+                    </h4>
+                    <p className="text-xl font-bold">38.00$ + tx</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-base font-medium mb-1">
+                      Crédit + Régie du logement :
+                    </h4>
+                    <p className="text-xl font-bold">38.00$ + tx</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-base font-medium mb-1">
+                      Enquête complète (tout inclus) :
+                    </h4>
+                    <p className="text-xl font-bold">44.50$ + tx</p>
+                  </div>
                 </div>
-                
-                <div>
-                  <h3 className="text-xl font-medium mb-2">
-                    Enquête de crédit en ligne + Régie du logement au Québec :
-                  </h3>
-                  <p className="text-2xl font-bold">38.00$ + tx</p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-medium mb-2">
-                    Enquête de crédit en ligne + Antécédents judiciaires au Québec + Régie du logement :
-                  </h3>
-                  <p className="text-2xl font-bold">44.50$ + tx</p>
+              </div>
+
+              {/* Plan avec adhésion annuelle */}
+              <div>
+                <h3 className="text-lg font-bold mb-3">Plan avec adhésion (75$/an)</h3>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="text-base font-medium mb-1">
+                      Crédit + Antécédents judiciaires :
+                    </h4>
+                    <p className="text-xl font-bold">32.00$ + tx</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-base font-medium mb-1">
+                      Crédit + Régie du logement :
+                    </h4>
+                    <p className="text-xl font-bold">32.00$ + tx</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-base font-medium mb-1">
+                      Enquête complète (tout inclus) :
+                    </h4>
+                    <p className="text-xl font-bold">38.50$ + tx</p>
+                  </div>
                 </div>
               </div>
             </div>

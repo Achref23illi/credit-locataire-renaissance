@@ -46,6 +46,14 @@ const PaymentForm = () => {
               </p>
             </div>
             
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-8">
+              <h3 className="text-lg font-semibold mb-2">Livraison du rapport</h3>
+              <p className="text-gray-700">
+                <strong>Votre rapport vous sera envoyé par courriel dès qu'il sera disponible.</strong> 
+                Vous recevrez une notification de traitement à votre adresse courriel une fois le paiement effectué.
+              </p>
+            </div>
+            
             <div className="space-y-8">
               {/* Tenant Information */}
               <div>

@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, ArrowUp, Facebook, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, ArrowUp, Facebook, Instagram, Globe } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -18,10 +17,14 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-6">
-              <div className="w-10 h-10 bg-orange rounded-md flex items-center justify-center">
-                <span className="text-white font-bold">CR</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mr-3">
+                <img 
+                  src="/logo.png" 
+                  alt="Crédit Locataire Renaissance" 
+                  className="w-12 h-12 object-contain"
+                />
               </div>
-              <span className="ml-2 font-bold text-white text-lg">Crédit Locataire Renaissance</span>
+              <span className="font-bold text-white text-lg">Crédit Locataire Renaissance</span>
             </div>
             <p className="text-gray-300 mb-6">
               Services professionnels d'enquête de crédit pour propriétaires, employeurs et entreprises au Québec.
@@ -54,7 +57,18 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <Clock className="h-5 w-5 mr-3 mt-0.5 text-orange" />
-                <span>Lun-Ven: 9h  - 17h</span>
+                <span>Lun-Ven: 9h - 17h</span>
+              </li>
+              <li className="flex items-start">
+                <Globe className="h-5 w-5 mr-3 mt-0.5 text-orange" />
+                <a 
+                  href="https://creditlocataire.ca" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-orange transition-colors underline"
+                >
+                  creditlocataire.ca
+                </a>
               </li>
             </ul>
           </div>
@@ -89,7 +103,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-400">
-            Droits d'auteur © 2023 Enquête de crédit en ligne
+            Droits d'auteur © 2025 Enquête de crédit en ligne
           </p>
           <button
             onClick={scrollToTop}

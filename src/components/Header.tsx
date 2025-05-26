@@ -56,7 +56,7 @@ const Header = () => {
               <img 
                 src="/logo.png" 
                 alt="Crédit Locataire Renaissance" 
-                className="w-16 h-16 object-contain"
+                className="w-16 h-16 object-contain drop-shadow-sm"
               />
             </div>
             <div className="hidden lg:block">
