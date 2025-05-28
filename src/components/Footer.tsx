@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, ArrowUp, Facebook, Instagram, Globe } from 'lucide-react';
+import { Phone, Mail, Clock, ArrowUp, Facebook, Instagram, Globe } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -52,12 +52,11 @@ const Footer = () => {
                 <span>info@creditlocataire.ca</span>
               </li>
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 mr-3 mt-0.5 text-orange" />
-                <span>1234 Rue Principale, Montréal, QC H1A 1A1</span>
-              </li>
-              <li className="flex items-start">
                 <Clock className="h-5 w-5 mr-3 mt-0.5 text-orange" />
-                <span>Lun-Ven: 9h - 17h</span>
+                <div>
+                  <div>Lun-Ven: 9h - 17h</div>
+                  <div>Sam-Dim: 12h - 17h</div>
+                </div>
               </li>
               <li className="flex items-start">
                 <Globe className="h-5 w-5 mr-3 mt-0.5 text-orange" />

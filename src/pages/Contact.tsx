@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useToast } from '@/hooks/use-toast';
 import Header from '@/components/Header';
@@ -97,7 +96,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-medium">Téléphone</h3>
-                      <p className="text-gray-300">+1 (514) 555-7777</p>
+                      <p className="text-gray-300">+1 (514) 545-2839</p>
                     </div>
                   </div>
                   
@@ -109,20 +108,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-medium">Email</h3>
-                      <p className="text-gray-300">info@enquetedecredit.com</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="bg-orange/20 p-3 rounded-full mr-4">
-                      <svg className="h-6 w-6 text-orange" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-medium">Adresse</h3>
-                      <p className="text-gray-300">1234 Rue Principale, Montréal, QC H1A 1A1</p>
+                      <p className="text-gray-300">info@creditlocataire.ca</p>
                     </div>
                   </div>
                 </div>
@@ -137,12 +123,8 @@ const Contact = () => {
                     <span className="font-medium">9:00 - 17:00</span>
                   </li>
                   <li className="flex justify-between">
-                    <span className="text-gray-700">Samedi</span>
-                    <span className="font-medium">Fermé</span>
-                  </li>
-                  <li className="flex justify-between">
-                    <span className="text-gray-700">Dimanche</span>
-                    <span className="font-medium">Fermé</span>
+                    <span className="text-gray-700">Samedi - Dimanche</span>
+                    <span className="font-medium">12:00 - 17:00</span>
                   </li>
                 </ul>
               </div>
