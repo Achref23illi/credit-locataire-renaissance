@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -66,7 +65,7 @@ const Services = () => {
                   
                   <div className="flex flex-col md:flex-row md:items-center justify-between">
                     <div className="mb-4 md:mb-0">
-                      <span className="text-2xl font-bold text-orange">49,95$</span>
+                      <span className="text-2xl font-bold text-orange">35,00$</span>
                       <span className="text-gray-600 ml-2">par enquête</span>
                     </div>
                     <Link to="/demande/credit" className="btn-primary">
@@ -121,7 +120,7 @@ const Services = () => {
                   
                   <div className="flex flex-col md:flex-row md:items-center justify-between">
                     <div className="mb-4 md:mb-0">
-                      <span className="text-2xl font-bold text-orange">39,95$</span>
+                      <span className="text-2xl font-bold text-orange">35,00$</span>
                       <span className="text-gray-600 ml-2">par vérification</span>
                     </div>
                     <Link to="/demande/judiciaires" className="btn-primary">
@@ -176,7 +175,7 @@ const Services = () => {
                   
                   <div className="flex flex-col md:flex-row md:items-center justify-between">
                     <div className="mb-4 md:mb-0">
-                      <span className="text-2xl font-bold text-orange">29,95$</span>
+                      <span className="text-2xl font-bold text-orange">42,00$</span>
                       <span className="text-gray-600 ml-2">par vérification</span>
                     </div>
                     <Link to="/demande/regie" className="btn-primary">

@@ -59,7 +59,7 @@ const ConsentForm = () => {
                   <div className="mb-4">
                     <label className="flex items-center text-sm mb-4">
                       <input type="checkbox" className="mr-2" required />
-                      <span>J'autorise, La Société P.C.S. - loué et/ou locations@enquetedecreditenligne.com, à titre d'agente de renseignements personnels, à obtenir mon dossier de crédit pour propriétaires ou à leurs représentants, lequel étant précisé en toutes responsabilités.</span>
+                      <span>J'autorise Crédit Locataire Renaissance, à titre d'agent de renseignements personnels, à obtenir mon dossier de crédit pour le propriétaire ou son représentant autorisé. Les communications pourront être envoyées depuis l'adresse locations@creditlocataire.ca.</span>
                     </label>
                   </div>
                   

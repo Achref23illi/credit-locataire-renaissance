@@ -102,7 +102,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-400">
-            Droits d'auteur © 2025 Enquête de crédit en ligne
+            Droits d'auteur © 2025 Crédit Locataire Renaissance
           </p>
           <button
             onClick={scrollToTop}

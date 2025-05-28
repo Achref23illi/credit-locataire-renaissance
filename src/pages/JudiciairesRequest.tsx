@@ -40,7 +40,7 @@ const JudiciairesRequest = () => {
               
               <div className="mt-4 space-y-4 text-gray-700">
                 <p>
-                  Enquetedecreditenligne.com ne peut être tenue responsable des frais 
+                  Crédit Locataire Renaissance ne peut être tenue responsable des frais 
                   occasionnés par des informations erronées, des fraudes commises par la 
                   personne vérifiée, des loyers impayés ou encore les dossiers de crédit non
                   mis à jour par le locataire auprès de l'agence de crédit Transunion.
@@ -68,21 +68,21 @@ const JudiciairesRequest = () => {
                     <h4 className="text-base font-medium mb-1">
                       Crédit + Antécédents judiciaires :
                     </h4>
-                    <p className="text-xl font-bold">38.00$ + tx</p>
+                    <p className="text-xl font-bold">35.00$ + tx</p>
                   </div>
                   
                   <div>
                     <h4 className="text-base font-medium mb-1">
                       Crédit + Régie du logement :
                     </h4>
-                    <p className="text-xl font-bold">38.00$ + tx</p>
+                    <p className="text-xl font-bold">35.00$ + tx</p>
                   </div>
                   
                   <div>
                     <h4 className="text-base font-medium mb-1">
                       Enquête complète (tout inclus) :
                     </h4>
-                    <p className="text-xl font-bold">44.50$ + tx</p>
+                    <p className="text-xl font-bold">42.00$ + tx</p>
                   </div>
                 </div>
               </div>
@@ -95,21 +95,21 @@ const JudiciairesRequest = () => {
                     <h4 className="text-base font-medium mb-1">
                       Crédit + Antécédents judiciaires :
                     </h4>
-                    <p className="text-xl font-bold">32.00$ + tx</p>
+                    <p className="text-xl font-bold">35.00$ + tx</p>
                   </div>
                   
                   <div>
                     <h4 className="text-base font-medium mb-1">
                       Crédit + Régie du logement :
                     </h4>
-                    <p className="text-xl font-bold">32.00$ + tx</p>
+                    <p className="text-xl font-bold">35.00$ + tx</p>
                   </div>
                   
                   <div>
                     <h4 className="text-base font-medium mb-1">
                       Enquête complète (tout inclus) :
                     </h4>
-                    <p className="text-xl font-bold">38.50$ + tx</p>
+                    <p className="text-xl font-bold">42.00$ + tx</p>
                   </div>
                 </div>
               </div>
