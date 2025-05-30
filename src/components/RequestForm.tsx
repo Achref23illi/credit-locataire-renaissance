@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
+import { sendEmail, emailConfig } from '@/utils/emailjs';
 
 type RequestFormProps = {
   type: 'credit' | 'judiciaires' | 'regie';
@@ -13,13 +13,51 @@ const RequestForm = ({ type, title }: RequestFormProps) => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [formData, setFormData] = useState({
+    // Tenant information
+    tenantFirstName: '',
+    tenantLastName: '',
+    tenantDob: '',
+    tenantPhone: '',
+    tenantAddress: '',
+    // Owner information
+    ownerFirstName: '',
+    ownerLastName: '',
+    ownerEmail: '',
+    ownerPhone: '',
+    // Consent
+    consentGiven: false
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: type === 'checkbox' ? checked : value
+    }));
+  };
+  
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulating form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const templateParams = {
+        request_type: type,
+        request_title: title,
+        tenant_firstName: formData.tenantFirstName,
+        tenant_lastName: formData.tenantLastName,
+        tenant_dob: formData.tenantDob,
+        tenant_phone: formData.tenantPhone,
+        tenant_address: formData.tenantAddress,
+        owner_firstName: formData.ownerFirstName,
+        owner_lastName: formData.ownerLastName,
+        owner_email: formData.ownerEmail,
+        owner_phone: formData.ownerPhone,
+        submission_time: new Date().toLocaleString()
+      };
+
+      await sendEmail(emailConfig.templates.request, templateParams);
       
       toast({
         title: "Demande envoyée avec succès",
@@ -28,7 +66,16 @@ const RequestForm = ({ type, title }: RequestFormProps) => {
       });
       
       navigate('/');
-    }, 1500);
+    } catch (error) {
+      toast({
+        title: "Erreur d'envoi",
+        description: "Veuillez réessayer plus tard.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   return (
@@ -42,52 +89,67 @@ const RequestForm = ({ type, title }: RequestFormProps) => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="mb-4">
-              <label htmlFor="tenant-first-name" className="block mb-2 text-gray-700 font-medium">Prénom</label>
+              <label htmlFor="tenantFirstName" className="block mb-2 text-gray-700 font-medium">Prénom</label>
               <input 
                 type="text" 
-                id="tenant-first-name" 
+                id="tenantFirstName" 
+                value={formData.tenantFirstName}
+                onChange={handleInputChange}
                 className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent"
                 required
+                disabled={isSubmitting}
               />
             </div>
             
             <div className="mb-4">
-              <label htmlFor="tenant-last-name" className="block mb-2 text-gray-700 font-medium">Nom</label>
+              <label htmlFor="tenantLastName" className="block mb-2 text-gray-700 font-medium">Nom</label>
               <input 
                 type="text" 
-                id="tenant-last-name" 
+                id="tenantLastName" 
+                value={formData.tenantLastName}
+                onChange={handleInputChange}
                 className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent"
                 required
+                disabled={isSubmitting}
               />
             </div>
             
             <div className="mb-4">
-              <label htmlFor="tenant-dob" className="block mb-2 text-gray-700 font-medium">Date de naissance</label>
+              <label htmlFor="tenantDob" className="block mb-2 text-gray-700 font-medium">Date de naissance</label>
               <input 
                 type="date" 
-                id="tenant-dob" 
+                id="tenantDob" 
+                value={formData.tenantDob}
+                onChange={handleInputChange}
                 className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent"
                 required
+                disabled={isSubmitting}
               />
             </div>
             
             <div className="mb-4">
-              <label htmlFor="tenant-phone" className="block mb-2 text-gray-700 font-medium">Téléphone</label>
+              <label htmlFor="tenantPhone" className="block mb-2 text-gray-700 font-medium">Téléphone</label>
               <input 
                 type="tel" 
-                id="tenant-phone" 
+                id="tenantPhone" 
+                value={formData.tenantPhone}
+                onChange={handleInputChange}
                 className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent"
                 required
+                disabled={isSubmitting}
               />
             </div>
             
             <div className="mb-4 md:col-span-2">
-              <label htmlFor="tenant-address" className="block mb-2 text-gray-700 font-medium">Adresse actuelle</label>
+              <label htmlFor="tenantAddress" className="block mb-2 text-gray-700 font-medium">Adresse actuelle</label>
               <input 
                 type="text" 
-                id="tenant-address" 
+                id="tenantAddress" 
+                value={formData.tenantAddress}
+                onChange={handleInputChange}
                 className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent"
                 required
+                disabled={isSubmitting}
               />
             </div>
           </div>
@@ -99,42 +161,54 @@ const RequestForm = ({ type, title }: RequestFormProps) => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="mb-4">
-              <label htmlFor="owner-first-name" className="block mb-2 text-gray-700 font-medium">Prénom</label>
+              <label htmlFor="ownerFirstName" className="block mb-2 text-gray-700 font-medium">Prénom</label>
               <input 
                 type="text" 
-                id="owner-first-name" 
+                id="ownerFirstName" 
+                value={formData.ownerFirstName}
+                onChange={handleInputChange}
                 className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent"
                 required
+                disabled={isSubmitting}
               />
             </div>
             
             <div className="mb-4">
-              <label htmlFor="owner-last-name" className="block mb-2 text-gray-700 font-medium">Nom</label>
+              <label htmlFor="ownerLastName" className="block mb-2 text-gray-700 font-medium">Nom</label>
               <input 
                 type="text" 
-                id="owner-last-name" 
+                id="ownerLastName" 
+                value={formData.ownerLastName}
+                onChange={handleInputChange}
                 className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent"
                 required
+                disabled={isSubmitting}
               />
             </div>
             
             <div className="mb-4">
-              <label htmlFor="owner-email" className="block mb-2 text-gray-700 font-medium">Email</label>
+              <label htmlFor="ownerEmail" className="block mb-2 text-gray-700 font-medium">Email</label>
               <input 
                 type="email" 
-                id="owner-email" 
+                id="ownerEmail" 
+                value={formData.ownerEmail}
+                onChange={handleInputChange}
                 className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent"
                 required
+                disabled={isSubmitting}
               />
             </div>
             
             <div className="mb-4">
-              <label htmlFor="owner-phone" className="block mb-2 text-gray-700 font-medium">Téléphone</label>
+              <label htmlFor="ownerPhone" className="block mb-2 text-gray-700 font-medium">Téléphone</label>
               <input 
                 type="tel" 
-                id="owner-phone" 
+                id="ownerPhone" 
+                value={formData.ownerPhone}
+                onChange={handleInputChange}
                 className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent"
                 required
+                disabled={isSubmitting}
               />
             </div>
           </div>
@@ -145,7 +219,11 @@ const RequestForm = ({ type, title }: RequestFormProps) => {
             <input 
               type="checkbox" 
               className="mt-1" 
+              id="consentGiven"
+              checked={formData.consentGiven}
+              onChange={handleInputChange}
               required
+              disabled={isSubmitting}
             />
             <span className="text-gray-700">
               J'ai obtenu le consentement du candidat pour effectuer cette vérification et j'accepte les termes et conditions.
